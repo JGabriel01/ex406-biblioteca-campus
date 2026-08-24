@@ -29,5 +29,4 @@ router.post('/', (req, res) => {
 
   return res.status(201).json(novoMembro);
 });
-
 module.exports = router;
