@@ -10,7 +10,7 @@ let proximoId = 1;
 // GET /livros — lista todos os livros do acervo.
 router.get("/", (req, res) => {
   // TODO (Tarefa A): responda com status 200 e o array `livros`.
-  res.status(501).json({ erro: "não implementado" });
+  res.status(200).json(livros);
 });
 
 // POST /livros — cadastra um livro { titulo, autor } (ambos TEXTO/string).
@@ -20,7 +20,17 @@ router.post("/", (req, res) => {
   //  2. Se faltar titulo OU autor, responda 400.
   //  3. Crie { id: proximoId++, titulo, autor }, adicione em `livros`
   //     e responda 201 com o livro criado.
-  res.status(501).json({ erro: "não implementado" });
+  const {titulo, autor} = req.body
+  if (!titulo || !autor) {
+   return res.status(400).json({error: "Faltando Livro ou Autor."})
+  }
+  let livro = {
+      id: proximoId++,
+      titulo,
+      autor
+  }
+  livros.push(livro)
+  res.status(201).json(livro);
 });
 
 module.exports = router;
