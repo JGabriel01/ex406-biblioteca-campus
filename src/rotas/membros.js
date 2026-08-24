@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const { nome, matricula } = req.body;
 
-  // Valida se o corpo possui 'nome' e 'matricula' (ambos devem existir)
+  // Validase o corpo possui 'nome' e 'matricula' (ambos devem existir)
   if (!nome || !matricula) {
     return res.status(400).json({ mensagem: 'Nome e matrícula são obrigatórios.' });
   }
