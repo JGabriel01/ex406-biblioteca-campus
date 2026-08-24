@@ -9,7 +9,7 @@ let proximoId = 1;
 
 // GET /livros — lista todos os livros do acervo.
 router.get("/", (req, res) => {
-  // TODO (Tarefa A): responda com status 200 e o array `livros`.
+  //TODO (Tarefa A): responda com status 200 e o array `livros`.
   res.status(200).json(livros);
 });
 
